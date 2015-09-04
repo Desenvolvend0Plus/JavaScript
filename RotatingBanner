@@ -1,6 +1,6 @@
 
 <script>
-var banners = ["img01.jpg","...","..."];
+            var banners = ["img01.jpg","...","..."];
             var bannerCurrent = 0;
 
             functionChangeBanner() {
@@ -13,5 +13,5 @@ var banners = ["img01.jpg","...","..."];
                     document.querySelector('img').src = banners[bannerCurrent];
                 }
             }
-setInterval(ChangeBanner, 2500);
+            setInterval(ChangeBanner, 2500);
 </script>
