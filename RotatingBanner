@@ -1,0 +1,17 @@
+
+<script>
+var banners = ["img01.jpg","...","..."];
+            var bannerCurrent = 0;
+
+            functionChangeBanner() {
+                bannerCurrent = (bannerCurrent + 1) % 2;
+                
+                if (banners.length === 1) {
+                   document.querySelector('img').src = banners[0]; 
+                }
+                if (banners.length > 1) {
+                    document.querySelector('img').src = banners[bannerCurrent];
+                }
+            }
+setInterval(ChangeBanner, 2500);
+</script>
