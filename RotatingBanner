@@ -1,17 +1,20 @@
 
 <script>
-            var banners = ["img01.jpg","...","..."];
-            var bannerCurrent = 0;
-
-            functionChangeBanner() {
-                bannerCurrent = (bannerCurrent + 1) % 2;
-                
-                if (banners.length === 1) {
-                   document.querySelector('img').src = banners[0]; 
+               var banners = ["img.png", "..."];
+               var Select = ""; // Inform the Tag
+               var bannerCurrent = 0;
+                function ChangeBanner() {
+                    bannerCurrent = (bannerCurrent + 1) % 2; // Number two it the number the images the directory
+                    if (banners.length === 1) {
+                        //document.querySelector(Select).src = banners[0];
+                        $(Select).attr("src", banners[0]).fadeIn();
+                    }
+                    if (banners.length > 1) {
+                        $(Select).fadeOut(function () {
+                            $(this).attr("src", banners[bannerCurrent]).fadeToggle(200);
+                        });
+                        // document.querySelector(Select).src = banners[bannerCurrent];
+                    }
                 }
-                if (banners.length > 1) {
-                    document.querySelector('img').src = banners[bannerCurrent];
-                }
-            }
-            setInterval(ChangeBanner, 2500);
+                setInterval(ChangeBanner, 3500);
 </script>
