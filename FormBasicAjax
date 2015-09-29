@@ -1,0 +1,25 @@
+$(document).ready(function () {
+                
+                $('CLASSE DO FORM').submit(function () {
+                    var dados = $(this).serialize();
+                    $.ajax({
+                        url: 'PATH DO ARQUIVO QUE ENVIA EMAIL .PHP',
+                        data: dados,
+                        type: 'POST',
+                        dataType: 'json OU HTML',
+                        beforeSend: function () {
+                            $('CLASSE DA DIV RESPONSVEL POR MOSTRAR UM CARREGAMENTO').fadeIn(400);
+                        },
+                        success: function (data) {
+                            console.clear();
+                            console.log(data);
+                            $('CLASSE DA DIV RESPONSVEL POR OCULTAR UM CARREGAMENTO').fadeOut(400);
+                            $('CLASSE DA DIV RESPONSVEL POR MOSTRAR UMA MSG DE SUCESSO').fadeIn();
+                            $('CLASSE DE UM SPAN RESPONSVEL POR MOSTRAR O NOME, EMAIL E ETC').html(data.name);
+//                            EXEMPLO alert('Seu nome:'+ data.name);
+                        }
+                    });
+                    return false;
+                });
+
+ });
